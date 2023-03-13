@@ -56,7 +56,7 @@ class App:
 
 # INITIALIZATION -----------------------
 
-macropad = MacroPad()
+macropad = MacroPad(rotate=180)
 macropad.display.auto_refresh = False
 macropad.pixels.auto_write = False
 
@@ -151,6 +151,7 @@ while True:
             if isinstance(item, int):
                 if item >= 0:
                     macropad.keyboard.press(item)
+                    time.sleep(0.1)
                 else:
                     macropad.keyboard.release(-item)
             elif isinstance(item, float):
